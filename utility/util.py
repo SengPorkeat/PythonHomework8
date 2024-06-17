@@ -44,13 +44,13 @@ def deleteFile(filePathToCheck) -> None:
         if ask == "yes" or ask == 'y':
             try:
                 filePath.unlink()
-                print(f"File '{fileName}' has been deleted !")
+                print(f"File '{fileName}' has been delete !")
             except Exception as e:
                 print(f"Error: {e}")
         else:
             print("Cancel delete file")
     else:
-        print(f"File '{fileName}' isn't exist '{filePathToCheck}' !")
+        print(f"File '{fileName}' isnt exist '{filePathToCheck}' !")
 
 def searchFile(filePathToCheck) -> None:
     checkFiles = []
