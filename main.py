@@ -7,11 +7,11 @@ menu()
 while True:
     op = int(input("Choose your option: "))
     if op == 1:
-        checkDays(pathCheck)
+        checkDays()
     elif op == 2:
-        deleteFile(pathCheck)
+        deleteFile()
     elif op == 3:
-        searchFile(pathCheck)
+        searchFile()
     elif op == 0:
         break
     else:

@@ -6,7 +6,7 @@ filePathToCheck = Path("D:\\ISTAD\\Python")
 target = Path("C:\\Users\\ROG\\Desktop\\homework8\\backUpFile")
 stats = filePathToCheck.stat()
 
-def checkDays(filePathToCheck)->None:
+def checkDays()->None:
     checkFiles = []
     checkDay = int(input("Days: "))
     if filePathToCheck.exists():
@@ -24,7 +24,7 @@ def checkDays(filePathToCheck)->None:
                             data = copyBinary.read()
                         with open(target / entry.name, "wb") as pasteBinary:
                             pasteBinary.write(data)
-                        print(f"Copied: {entry.name} to {target}")
+                        print(f"Copy: {entry.name} to {target}")
                     except Exception as e:
                         print(f"Failed to copy {entry.name}: {e}")
                 else:
@@ -36,7 +36,7 @@ def checkDays(filePathToCheck)->None:
         print(f"{id}: {check}")
         id+=1
         
-def deleteFile(filePathToCheck) -> None:
+def deleteFile() -> None:
     fileName = input("Delete File: ")
     filePath = filePathToCheck / fileName
     if filePath.exists() and filePath.is_file():
@@ -50,9 +50,9 @@ def deleteFile(filePathToCheck) -> None:
         else:
             print("Cancel delete file")
     else:
-        print(f"File '{fileName}' isnt exist '{filePathToCheck}' !")
+        print(f"File {fileName} isnt exist !")
 
-def searchFile(filePathToCheck) -> None:
+def searchFile() -> None:
     checkFiles = []
     checkName = input("Check Name: ")
     if filePathToCheck.exists():
@@ -62,5 +62,3 @@ def searchFile(filePathToCheck) -> None:
     for file in checkFiles:
         print(f"File: {file}")
                     
-
-searchFile(filePathToCheck)
