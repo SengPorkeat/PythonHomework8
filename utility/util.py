@@ -3,8 +3,9 @@ from datetime import datetime,timedelta
 
 
 filePathToCheck = Path("D:\\ISTAD\\Python")
-target = Path("C:\\Users\\ROG\\Desktop\\homeWorkPython\\homework8\\backUpFile")
+target = Path("C:\\Users\\ROG\\Desktop\\homework8\\backUpFile")
 stats = filePathToCheck.stat()
+
 def checkDays(filePathToCheck)->None:
     checkFiles = []
     checkDay = int(input("Days: "))
@@ -28,6 +29,8 @@ def checkDays(filePathToCheck)->None:
                         print(f"Failed to copy {entry.name}: {e}")
                 else:
                     print("Dont have older file !")
+    else:
+        print("File doesnt exist")
     id = 1
     for check in checkFiles:
         print(f"{id}: {check}")
@@ -49,6 +52,15 @@ def deleteFile(filePathToCheck) -> None:
     else:
         print(f"File '{fileName}' isn't exist '{filePathToCheck}' !")
 
+def searchFile(filePathToCheck) -> None:
+    checkFiles = []
+    checkName = input("Check Name: ")
+    if filePathToCheck.exists():
+        for entry in filePathToCheck.iterdir():
+            if entry.is_file() and checkName in entry.name:
+                    checkFiles.append(entry.name)
+    for file in checkFiles:
+        print(f"File: {file}")
+                    
 
-
-deleteFile(filePathToCheck= Path("D:\\ISTAD\\Python"))     
+searchFile(filePathToCheck)
