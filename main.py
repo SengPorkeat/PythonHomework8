@@ -11,7 +11,7 @@ while True:
     elif op == 2:
         deleteFile(pathCheck)
     elif op == 3:
-        pass
+        searchFile(pathCheck)
     elif op == 0:
         break
     else:
